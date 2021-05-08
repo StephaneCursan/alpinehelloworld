@@ -113,6 +113,7 @@ pipeline {
                 steps {
                     script {
                         sh 'curl https://$PRODUCTION.herokuapp.com | grep -q "Hello world"'
+                    }
                 }
             }
         }
