@@ -105,15 +105,15 @@ pipeline {
                     '''
                 }
             }
-            stage('test production deployment') {
-                when {
-                    expression { GIT_BRANCH == 'origin/master' }
-                }
-                agent any
-                steps {
-                    script {
-                        sh 'curl https://$PRODUCTION.herokuapp.com | grep -q "Hello world"'
-                    }
+        }
+        stage('test production deployment') {
+            when {
+                expression { GIT_BRANCH == 'origin/master' }
+            }
+            agent any
+            steps {
+                script {
+                     sh 'curl https://$PRODUCTION.herokuapp.com | grep -q "Hello world"'
                 }
             }
         }
