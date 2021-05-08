@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        docker run --name $IMAGE_NAME -p 80:5000 -e PORT=5000 -d $IMAGE_NAME:$IMAGE_TAG
+                        docker run --name $IMAGE_NAME -p 80:5000 -e PORT=5000 -d $IMAGE_REPO/$IMAGE_NAME:$IMAGE_TAG
                         sleep 5
                     '''
                 }
